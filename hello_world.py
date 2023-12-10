@@ -3,7 +3,6 @@ import network
 import time
 import urequests
 from machine import Pin
-from credentials import WIFI_NAME, WIFI_PASSWORD
 
 def lightShow() :
     print("Internet Connection Made")
@@ -16,11 +15,9 @@ def lightShow() :
     pin = Pin("LED", Pin.OUT)
     for astronaut in response["people"]:
         pin.toggle()
-        pin.off()
+        # pin.off()
         print(astronaut['name'])
         time.sleep(2)
-
-    time.sleep(15)
 
 
 # wlan = network.WLAN(network.STA_IF)
